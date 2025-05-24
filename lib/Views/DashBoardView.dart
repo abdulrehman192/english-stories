@@ -1,11 +1,11 @@
-import 'package:englishstories/Constants/AppAssets.dart';
-import 'package:englishstories/Constants/AppColors.dart';
-import 'package:englishstories/Controllers/StoryController.dart';
-import 'package:englishstories/Controllers/ThemeController.dart';
-import 'package:englishstories/Services/Services.dart';
-import 'package:englishstories/Utills/CommonFunctions.dart';
-import 'package:englishstories/Views/BookMarksView.dart';
-import 'package:englishstories/Widgets/HomeStoryCard.dart';
+import '/Constants/AppAssets.dart';
+import '/Constants/AppColors.dart';
+import '/Controllers/StoryController.dart';
+import '/Controllers/ThemeController.dart';
+import '/Services/Services.dart';
+import '/Utills/CommonFunctions.dart';
+import '/Views/BookMarksView.dart';
+import '/Widgets/HomeStoryCard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,8 +23,6 @@ class _DashBoardState extends State<DashBoard> {
   @override
   void initState() {
     super.initState();
-    final db = SqliteService.instance;
-    db.copyDatabase();
     Get.put(StoryController(), permanent: true);
     Get.put(ThemeController(), permanent: true);
     Get.put(NotificationController(), permanent: true);
@@ -65,7 +63,7 @@ class _DashBoardState extends State<DashBoard> {
                       ),
                       Padding(
                         padding:  EdgeInsets.symmetric(horizontal: 10.sp),
-                        child: const Text("English Stories for Kids",style: TextStyle(fontSize: 18,color: Colors.white,fontWeight: FontWeight.w600),),
+                        child: const Text("Interested Stories for Kids",style: TextStyle(fontSize: 18,color: Colors.white,fontWeight: FontWeight.w600),),
                       )
                     ],
                   ),
@@ -115,9 +113,9 @@ class _DashBoardState extends State<DashBoard> {
           appBar: AppBar(
             iconTheme: const IconThemeData(color: Colors.white),
             backgroundColor: theme.isDark ? AppColors.darkColor : AppColors.primaryColor,
-            title: const Text("English Stories", style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600),),
+            title: const Text("Interested Stories", style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600),),
             systemOverlayStyle: SystemUiOverlayStyle(
-              statusBarColor: theme.isDark ? AppColors.darkColor : AppColors.primaryColor,
+              statusBarColor: Colors.transparent,
               systemNavigationBarColor: Colors.transparent,
               statusBarIconBrightness: Brightness.light,
               systemNavigationBarIconBrightness: Brightness.dark,
@@ -171,7 +169,7 @@ class _DashBoardState extends State<DashBoard> {
                     itemBuilder: (context, index){
                   return HomeStoryCard(
                       type: controller.types[index],
-                      backgroundColor: Colors.lightGreen
+                      backgroundColor: AppColors.primaryColor
                   );
                 }
                 );

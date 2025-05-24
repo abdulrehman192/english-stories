@@ -1,7 +1,6 @@
-import 'package:englishstories/Controllers/NotificationController.dart';
+import '/Controllers/NotificationController.dart';
 import '/Controllers/TextToSpeechController.dart';
 import '/Utills/AppTheme.dart';
-import '/Views/SplashView.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';

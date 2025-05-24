@@ -11,7 +11,7 @@ class NotificationService
   void initLocalNotifications()async
   {
     tz.initializeTimeZones();
-    var android  = const AndroidInitializationSettings("@mipmap/launcher_icon");
+    var android  = const AndroidInitializationSettings("@mipmap/ic_launcher");
     var ios = const DarwinInitializationSettings();
     var initializeSettings = InitializationSettings(
         android: android,
@@ -73,9 +73,7 @@ class NotificationService
       body, // Notification body
       scheduledDateTime, // Scheduled date and time
       notificationDetails,
-      androidAllowWhileIdle: true,
-      uiLocalNotificationDateInterpretation:
-      UILocalNotificationDateInterpretation.absoluteTime,
+      androidScheduleMode: AndroidScheduleMode.exact,
     );
   }
 

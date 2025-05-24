@@ -1,6 +1,6 @@
-import 'package:englishstories/Models/StoryType.dart';
-import 'package:englishstories/Services/Services.dart';
-import 'package:englishstories/Utills/CommonFunctions.dart';
+import '/Models/StoryType.dart';
+import '/Services/Services.dart';
+import '/Utills/CommonFunctions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -43,15 +43,19 @@ set story(Story val)
 
 increaseStoryFont()
 {
-  _storyFontSize++;
-  update();
+  if(_storyFontSize < 25){
+    _storyFontSize++;
+    update();
+  }
 }
 
 
   decreaseStoryFont()
   {
-    _storyFontSize--;
-    update();
+    if(_storyFontSize > 14){
+      _storyFontSize--;
+      update();
+    }
   }
 @override
   onInit(){

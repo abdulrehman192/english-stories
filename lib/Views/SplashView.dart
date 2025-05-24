@@ -1,6 +1,6 @@
-import 'package:englishstories/Constants/AppAssets.dart';
-import 'package:englishstories/Services/Services.dart';
-import 'package:englishstories/Views/DashBoardView.dart';
+import '/Constants/AppAssets.dart';
+import '/Services/Services.dart';
+import '/Views/DashBoardView.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -25,9 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
   _openScreen()async
   {
-    final db = SqliteService.instance;
      Get.off(() => const DashBoard());
-     db.copyDatabase();
   }
   @override
   Widget build(BuildContext context) {
@@ -43,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
           height: 1.sh,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage(AppAssets.launchImage)
+              image: AssetImage(AppAssets.appIcon)
             )
           ),
         ),

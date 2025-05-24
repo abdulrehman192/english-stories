@@ -1,6 +1,6 @@
-import 'package:englishstories/Constants/AppAssets.dart';
-import 'package:englishstories/Controllers/ThemeController.dart';
-import 'package:englishstories/Utills/CommonFunctions.dart';
+import '/Constants/AppAssets.dart';
+import '/Controllers/ThemeController.dart';
+import '/Utills/CommonFunctions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -26,7 +26,7 @@ class BookMarks extends StatelessWidget {
                     backgroundColor: theme.isDark ? AppColors.darkColor : AppColors.primaryColor,
                     title: const Text("BookMarks", style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600),),
                     systemOverlayStyle: SystemUiOverlayStyle(
-                      statusBarColor: theme.isDark ? AppColors.darkColor : AppColors.primaryColor,
+                      statusBarColor: Colors.transparent,
                       systemNavigationBarColor: Colors.transparent,
                       statusBarIconBrightness: Brightness.light,
                       systemNavigationBarIconBrightness: Brightness.dark,
@@ -50,8 +50,8 @@ class BookMarks extends StatelessWidget {
                         {
                           return  const[
                             PopupMenuItem(
-                              child:  const Text("Share App"),
                               value: "Share",
+                              child:  const Text("Share App"),
 
                             ),
                             PopupMenuItem(child: Text("Rate App")
@@ -79,14 +79,16 @@ class BookMarks extends StatelessWidget {
                               }
                           )
                               :
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Image.asset(AppAssets.oneStoriesImage),
-                              SizedBox(height: 10.h,),
-                              Text("No BookMarks",style: TextStyle(color: Colors.green.shade900,fontSize: 18,fontWeight: FontWeight.w800),),
-                            ],
+                          Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Image.asset(AppAssets.oneStoriesImage),
+                                SizedBox(height: 10.h,),
+                                Text("No BookMarks",style: TextStyle(color: Colors.green.shade900,fontSize: 18,fontWeight: FontWeight.w800),),
+                              ],
+                            ),
                           );
                         }
                     ),

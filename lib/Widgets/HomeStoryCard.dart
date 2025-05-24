@@ -1,9 +1,9 @@
-import 'package:englishstories/Constants/AppAssets.dart';
-import 'package:englishstories/Controllers/StoryController.dart';
-import 'package:englishstories/Controllers/ThemeController.dart';
-import 'package:englishstories/Models/Models.dart';
-import 'package:englishstories/Models/StoryType.dart';
-import 'package:englishstories/Views/StoryListView.dart';
+import '/Constants/AppAssets.dart';
+import '/Controllers/StoryController.dart';
+import '/Controllers/ThemeController.dart';
+import '/Models/Models.dart';
+import '/Models/StoryType.dart';
+import '/Views/StoryListView.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';

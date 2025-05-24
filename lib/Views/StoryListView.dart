@@ -1,6 +1,6 @@
-import 'package:englishstories/Constants/AppColors.dart';
-import 'package:englishstories/Controllers/StoryController.dart';
-import 'package:englishstories/Controllers/ThemeController.dart';
+import '/Constants/AppColors.dart';
+import '/Controllers/StoryController.dart';
+import '/Controllers/ThemeController.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -29,9 +29,9 @@ class StoryListView extends StatelessWidget {
               ),
             ],
             systemOverlayStyle: SystemUiOverlayStyle(
-              statusBarColor: theme.isDark ? AppColors.darkColor : AppColors.primaryColor,
+              statusBarColor: Colors.transparent,
               systemNavigationBarColor: Colors.transparent,
-              statusBarIconBrightness: Brightness.light,
+              statusBarIconBrightness: Brightness.dark,
               systemNavigationBarIconBrightness: Brightness.dark,
 
             ),
