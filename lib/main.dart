@@ -1,3 +1,5 @@
+import 'package:interested_stories/Views/SplashView.dart';
+
 import '/Controllers/NotificationController.dart';
 import '/Controllers/TextToSpeechController.dart';
 import '/Utills/AppTheme.dart';
@@ -41,7 +43,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             initialBinding: InitialBindings(),
             theme: kMyAppTheme[controller.isDark ? AppTheme.dark : AppTheme.light],
-            home: const DashBoard(),
+            home: const SplashScreen(),
           );
         }
       );

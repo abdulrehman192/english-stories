@@ -1,3 +1,6 @@
+import 'package:interested_stories/Controllers/Controllers.dart';
+import 'package:interested_stories/Controllers/NotificationController.dart';
+
 import '/Constants/AppAssets.dart';
 import '/Services/Services.dart';
 import '/Views/DashBoardView.dart';
@@ -16,12 +19,15 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   initState()
   {
+    Get.put(()=> TextToSpeechController(), permanent: true);
+    Get.put(()=> StoryController(), permanent: true);
+    Get.put(()=> NotificationController(), permanent: true);
     super.initState();
     _startTimer();
   }
   _startTimer()
   {
-    Future.delayed(const Duration(seconds: 0), _openScreen);
+    Future.delayed(const Duration(seconds: 2), _openScreen);
   }
   _openScreen()async
   {
